@@ -324,8 +324,8 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     /* Edit by RoggeOhta */
-    /* Font size too large for phone */
-    /*font-size: 2rem;*/
+    /* Fix font size too large to phone */
+    /* font-size: 2rem; */
     font-size: 1.75rem;
 }
 
