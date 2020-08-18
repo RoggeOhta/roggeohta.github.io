@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Mathjax测试, 罗格的博客">
+    <meta name="keywords" content="异星工厂(Factorio)中量化设计的数学, 罗格的博客">
     <meta name="description" content="罗格思考记录的地方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Mathjax测试 | 罗格的博客</title>
+    <title>异星工厂(Factorio)中量化设计的数学 | 罗格的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -234,12 +234,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Mathjax测试</h1>
+                    <h1 class="description center-align post-title">异星工厂(Factorio)中量化设计的数学</h1>
                 </div>
             </div>
         </div>
@@ -354,9 +354,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                <span class="chip bg-color">数学</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                <span class="chip bg-color">线性代数</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -368,7 +376,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-08-16
+                    2020-08-18
                 </div>
                 
 
@@ -377,7 +385,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    738
+                    987
                 </div>
                 
 
@@ -399,25 +407,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ndS的推导-一般化"><a href="#ndS的推导-一般化" class="headerlink" title="ndS的推导-一般化"></a>ndS的推导-一般化</h2><p>对于一个二元函数，空间内每一个点都可以被两个参数给参数化<br>$$ \left{\begin{matrix}<br>x=x(u,v)\<br>y=y(u,v)\<br>z=z(u,v)<br>\end{matrix}\right. $$</p>
-<p>我们把同时可以把三个分量结合起来<br>$$  (x,y,z)=\vec{r}=\vec{r}(u,v)  $$</p>
-<p>现在我们来表示U和V<br>$$<br>\vec{U}=&lt;\frac{\partial \vec{r}}{\partial u}&gt;\Delta u<br>\vec{U}=&lt;\frac{\partial \vec{r}}{\partial v}&gt;\Delta v<br>$$<br>==太长了就简写了，这个包含了三个分量，分别对向量r的x,y,z做u和v的偏导==</p>
-<p>然后依然是<code>!$ \hat{n}dS=\vec{U}\times \vec{V} $</code><br>$$  \vec{U}\times \vec{V}=(\frac{\partial \vec{r}}{\partial u}\times \frac{\partial \vec{r}}{\partial v})dudv $$<br>如果你把它展开的话就是雅各比行列式 ==(Here we are again)==</p>
-<p>这是一般化的解，如果换成dxdy就是上面那样</p>
-<h1 id="高斯散度定理（Divergence-theorem"><a href="#高斯散度定理（Divergence-theorem" class="headerlink" title="高斯散度定理（Divergence theorem)"></a>高斯散度定理（Divergence theorem)</h1><p>散度定理基本内容就是一个向量场穿过一个三维闭合曲面的通量等于这个闭合曲面围起来面积的散度的积分</p>
-<p>$$  \iint _S F\cdot n dA=\iiint _R divF\ dV  $$<br>==这里左边的二重积分应该要有个环强调是闭合曲面，但是latex打不出来==</p>
-<p>复习一下散度的定义：<br>$$  \triangledown·(V(x,y))=\frac{\partial V_x(x,y)}{\partial x}+\frac{\partial V_y(x,y)}{\partial y}  $$</p>
-<h2 id="散度定理证明"><a href="#散度定理证明" class="headerlink" title="散度定理证明"></a>散度定理证明</h2><p>我们把一个闭合曲面（三维物体）细分成无数个小正方体<br>我们可以得到一个近似公式<br>$$  flux\ of\ F\ over\ faces\cong (div\ F)\Delta V  $$</p>
-<p>因为内部的散度之间互相抵消了，我们计算的散度只存在于边界上（表面）<br>$$  \iint _s F\cdot ndA\cong \iiint _R divF\ dV  $$<br>这样理解的话左边的式子就是闭合曲面在向量场上的通量<br>右边是体积的散度积分，但是体积内部的散度都互相抵消了，所以本质上还是只算了表面的，也就是通量</p>
-<p>==当然这是个非常粗糙的证明（非常不严谨）==</p>
-<h1 id="三维线积分"><a href="#三维线积分" class="headerlink" title="三维线积分"></a>三维线积分</h1><p>3D的线积分也是算做工，和2D没啥区别，就是加了一个z轴<br>$$  work=\int _c \vec{F}d\vec{r}  $$<br>$$  \vec{F}=Pi+Qj+Rk\ d\vec{r}=&lt; dx,dy,dz &gt;  $$<br>$$  \int _c Pdx+Qdy+Rdz  $$</p>
-<h1 id="判断三维向量场是否是梯度场"><a href="#判断三维向量场是否是梯度场" class="headerlink" title="判断三维向量场是否是梯度场"></a>判断三维向量场是否是梯度场</h1><p>依然是判断混合导数是否相等，只不过要根据组合法则对所有轴的分量都判断相等才行</p>
-<p>$$  P_y=Q_x \ P_z=R_x \ Q_z=R_y  $$</p>
-<p>以上全部满足即为梯度场</p>
-<h1 id="三维梯度场的势函数"><a href="#三维梯度场的势函数" class="headerlink" title="三维梯度场的势函数"></a>三维梯度场的势函数</h1><p><strong>线积分法：</strong><br>根据路径无关定理，以及线积分基本定理的内容<br>$$  f(x,y,z)=\int _c ▽f·dR+f(0,0,0)  $$</p>
-<p>同时把这个线积分拆成三个线积分，分别是x,y,z三个分量即可得到势函数</p>
-<p><strong>反导数法:</strong><br>和二维类似的方法<br><img src="./images/1572951272906.png"></p>
-<h1 id="斯托克斯定理-Stokes-Formula"><a href="#斯托克斯定理-Stokes-Formula" class="headerlink" title="斯托克斯定理(Stokes Formula)"></a>斯托克斯定理(Stokes Formula)</h1><p>$$  \oint _c F·dR=\iint _S (curl F)·\hat{n}dA  $$</p>
+                <p>玩异星工厂一段时间了，一直对异星工厂中一个广受欢迎的Mod——Helmod中的自动量化设计很感兴趣。这是一个非常常用且强大的Mod，能帮助玩家自动完成很多量化设计的计算。今天闲得无聊，想办法自己实现一下。</p>
+<h2 id="问题介绍"><a href="#问题介绍" class="headerlink" title="问题介绍"></a>问题介绍</h2><p>异星工厂中的典型问题通常是这样的</p>
+<p><strong>一条流水线有多个加工机器同时工作，在单位时间内:<br>机器A使用a份材料1，产出b份中间产品1，c分中间产品2<br>机器B使用b份中间产品1，产出c份中间产品3<br>机器C使用d份中间产品3，最终产出最终产品</strong></p>
+<p>对于这个模型，可以提出很多问题，最常用，也是最有用的问题通常是：我可以分配出N份材料输入进产线，如何搭配机器使得其能刚好用完所有中间产品防止堆积。(因为游戏中产品没有及时处理掉产生堆积会导致机器无法运行，进而导致整个产线停工。)</p>
+<h2 id="约束输入时如何搭配机器使中间产品刚好用完"><a href="#约束输入时如何搭配机器使中间产品刚好用完" class="headerlink" title="约束输入时如何搭配机器使中间产品刚好用完"></a>约束输入时如何搭配机器使中间产品刚好用完</h2><p>我们以这个配方为例<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/Snipaste_2020-08-18_15-56-06.png"></p>
+<p>这是一个化工序列的配方，输入原煤，输出燃气作为产品，我们忽略产品的输出，只计算中间产品，单位时间为分钟：<br>第一个工厂输入300原煤，输出90煤作为中间产品 <code>注意：煤不等于原煤，煤是原煤的产品</code><br>第二个工厂输入200煤，输出120焦炭为中间产品<br>第三个工厂输入240焦炭</p>
+<p>现在我们的问题就是在输入的原煤固定时，使中间产品<strong>煤，焦炭</strong>全部用完</p>
+<p>使用矩阵建模可以得到一个Ax=b形式的等式<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597740946967.png"></p>
+<p>这里的矩阵A就是配方矩阵，其中每一列代表一个配方，每一行代表一种材料<br>此处的Input就是我们的输入值，有一点要注意这个Input必须输入一个负数。比如输入是3000原煤，这里就要输入-3000.</p>
+<p>我比较懒，计算部分就直接用Mathematica算了。<br>随便试一个数字，7299吧<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741167547.png"><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741191832.png"><br>向上取整后和游戏Mod中结果一致，Good.</p>
+<h2 id="更进一步：通过配方计算最优配比"><a href="#更进一步：通过配方计算最优配比" class="headerlink" title="更进一步：通过配方计算最优配比"></a>更进一步：通过配方计算最优配比</h2><p>这个Mod可以帮我们通过输入约束计算出消耗完中间产品的配比，但是不是所有配比都是最优配比。因为很多比例能用完所有产品都是通过冗余消耗做到的。说白了就是用不完，哪怕只剩一点点我也再加一台机器把他用完。这样做的缺点很明显，就是总有机器无法全功率运行。<br>Mod并没有提供通过配方计算完美比例的方法，所以我决定在刚刚研究的基础上更进一步，找到一个计算配方最优比例的通用方法。</p>
+<p>依旧是通过矩阵进行建模，只不过这次我们不需要输入约束了。所以可以完全不考虑输入的多少，只考虑如何配比能用完所有中间产品。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741531419.png"></p>
+<p>这个矩阵相当于方程组<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742206265.png"></p>
+<p>3个未知数，方程的结果还等于0.</p>
+<p>这里需要用到线性代数中解零空间的知识。</p>
+<p>先对这个配方矩阵进行行约化，找到其自由变量。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742287066.png"></p>
+<p>可以看到自由变量在第三列，设置第三个未知数z为1求特解。<br>通过重新设置未知数，得到了一个新的方程组<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742370655.png"></p>
+<p>现在这个方程组是可解的了，求解得到结果<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742432238.png"></p>
+<p>结果有分数，这里将他们都整数化，全部乘以9得到最终结果，完美配比是$40:18:9$</p>
+<p>验证一下：<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742538878.png"><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742581754.png"></p>
 
             </div>
             <hr/>
@@ -443,7 +452,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://roggeohta.xyz/mathjax-ce-shi.html">https://roggeohta.xyz/mathjax-ce-shi.html</a>
+                    <a href="https://roggeohta.xyz/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html">https://roggeohta.xyz/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -480,7 +489,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                                    <span class="chip bg-color">数学</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                                    <span class="chip bg-color">线性代数</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -523,7 +540,7 @@
         repo: 'roggeohta.github.io',
         owner: 'RoggeOhta',
         admin: ["roggeohta"],
-        id: '2020-08-16T18-31-32',
+        id: '2020-08-18T16-36-04',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -547,31 +564,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/dai-ma-ce-shi.html">
+                <a href="/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="代码测试">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="异星工厂(Factorio)中量化设计的数学">
                         
-                        <span class="card-title">代码测试</span>
+                        <span class="card-title">异星工厂(Factorio)中量化设计的数学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            堆排序(Heap sort)注意，这里的堆指的是二叉堆，不是堆栈的堆。
-堆的概念：堆一种近似完全二叉树。最大堆和最小堆：最大堆在堆得基础上满足父节点一定比子节点大的性质，最小堆就是满足满足父节点一定比子节点小的性质
-堆在实际数据结构中用一个
+                            玩异星工厂一段时间了，一直对异星工厂中一个广受欢迎的Mod——Helmod中的自动量化设计很感兴趣。这是一个非常常用且强大的Mod，能帮助玩家自动完成很多量化设计的计算。今天闲得无聊，想办法自己实现一下。
+问题介绍异星工厂中的典型问题通常是
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -579,6 +596,19 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -590,25 +620,25 @@
                 Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/mathjax-ce-shi.html">
+                <a href="/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Mathjax测试">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="异星工厂(Factorio)中量化设计的数学">
                         
-                        <span class="card-title">Mathjax测试</span>
+                        <span class="card-title">异星工厂(Factorio)中量化设计的数学</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ndS的推导-一般化对于一个二元函数，空间内每一个点都可以被两个参数给参数化$$ \left{\begin{matrix}x=x(u,v)\y=y(u,v)\z=z(u,v)\end{matrix}\right. $$
-我们把同时可以把三个
+                            玩异星工厂一段时间了，一直对异星工厂中一个广受欢迎的Mod——Helmod中的自动量化设计很感兴趣。这是一个非常常用且强大的Mod，能帮助玩家自动完成很多量化设计的计算。今天闲得无聊，想办法自己实现一下。
+问题介绍异星工厂中的典型问题通常是
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-18
                             </span>
                         <span class="publish-author">
                             
@@ -619,6 +649,18 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">
+                        <span class="chip bg-color">线性代数</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -786,13 +828,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

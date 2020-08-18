@@ -75,8 +75,11 @@ $(function () {
         $('#articleContent img').each(function () {
             let imgPath = $(this).attr('src');
             $(this).wrap('<div class="img-item" data-src="' + imgPath + '" data-sub-html=".caption"></div>');
+            // Edit by RoggeOhta
+            // Stop adding shadow to image due to make math formula image embedded in page
             // 图片添加阴影
-            $(this).addClass("img-shadow img-margin");
+            // $(this).addClass("img-shadow img-margin");
+
             // 图片添加字幕
             let alt = $(this).attr('alt');
             let title = $(this).attr('title');
