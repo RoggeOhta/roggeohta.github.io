@@ -2,54 +2,6 @@
 <search> 
   
   
-    
-    <entry>
-      <title>让任何图片唱Unravel/dame dane/教程</title>
-      <link href="/rang-ren-he-tu-pian-chang-unravel-dame-dane-jiao-cheng.html"/>
-      <url>/rang-ren-he-tu-pian-chang-unravel-dame-dane-jiao-cheng.html</url>
-      
-        <content type="html"><![CDATA[<p><strong>在开始之前，首先你需要准备：</strong></p><ul><li>Google账号</li><li>Google Drive(谷歌网盘）</li><li>资源文件</li></ul><p>资源文件下载地址：<br>链接：<a href="https://pan.baidu.com/s/1IM36QM5bSypcS6YOnVd-LA" target="_blank" rel="noopener">https://pan.baidu.com/s/1IM36QM5bSypcS6YOnVd-LA</a><br>提取码：5gqg </p><p><strong>最好也准备（可选）：</strong></p><ul><li>PS（校正用于动画化的图片）</li><li>PR（用于后处理，为视频加上音乐）</li></ul><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>我们使用的技术实际上是复现了<a href="https://papers.nips.cc/paper/8935-first-order-motion-model-for-image-animation" target="_blank" rel="noopener">这篇论文</a>的一个Demo。<br>这个<a href="https://github.com/AliaksandrSiarohin/first-order-model" target="_blank" rel="noopener">Demo的源仓库</a>包含了一个可以在Colab上在线运行的笔记本。我对其进行了一些删减和汉化，只保留了需要用到的部分。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598075852956.png" alt="资源文件"><br>下载好的资源文件应该包含这几个文件.</p><h2 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h2><p>首先将资源文件夹上传至Google Drive，然后右键使用Colab打开<strong>first-order-model-demo.ipynb</strong><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076040981.png"><br><strong>注意：第一次使用时需要关联一下应用，选择关联更多应用找到Google Colaboratory即可</strong><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076104899.png"></p><p>准备一张你希望用于动画生成的人脸图片，由于我们目标视频的分辨率是256*256，所以这张人脸图片没有必要太高分辨率。只要大于256*256即可（你用高分辨率的图片也会被强制裁剪为这个分辨率）</p><h3 id="可选：图片校正"><a href="#可选：图片校正" class="headerlink" title="可选：图片校正"></a>可选：图片校正</h3><p>如果希望获得较好的效果，可以将图片稍微处理一下。使用PS对齐图片和视频的眼镜和嘴巴，以及使人脸处于图片的中心位置。<br>这里我选了一张懂王的图片<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076411638.png" alt="没人比我更懂深度学习"><br>如果可以，最好将头也放正。</p><p>校正完成后上传到网盘同一个文件夹</p><hr><p>此时你上传到网盘的文件夹里应该包括这些文件<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076523282.png"><br>（Unravel.mp3在这里是不必要的）</p><p>关联好以后打开，进入Colab</p><h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><p>进入之后首先点击连接，Colab会为你分配一台机器<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076625950.png"></p><p>如果出现<strong>无法连接到GPU后端</strong><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076721788.png"><br>表示当前用的人太多，羊毛已经被薅完了。你可以选择等等再试(CPU运行非常慢，不推荐)</p><p>首先运行前三个单元格，然后在左侧切换到文件视图<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076909980.png"></p><p>授权连接网盘，打开蓝色链接，一路继续，允许<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598076980946.png"></p><p>复制代码<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077035897.png"></p><p>粘贴到这里，回车确定<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077061542.png"></p><p>显示<strong>Mounted at xxxx</strong>即为成功，此时可以切换一下视图（左边三个按钮随便点一个再点回来），可以发现多了一个文件夹，这个文件夹就是你的网盘。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077100625.png"></p><h3 id="指定素材"><a href="#指定素材" class="headerlink" title="指定素材"></a>指定素材</h3><p>修改下一个单元格中指定源视频和源图片的路径<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077281229.png"></p><p>可以在左侧文件浏览中找到文件后直接右键复制路径粘贴即可<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077267284.png"></p><p>修改后运行即可<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077331779.png"><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077342159.png"></p><p>这一步的目的是把图片裁剪成指定的尺寸（这里是256*256)，还有把视频处理成Python可以接受的数据格式，最后给出预览。</p><h3 id="创建模型并执行"><a href="#创建模型并执行" class="headerlink" title="创建模型并执行"></a>创建模型并执行</h3><p>把这里的<code>checkpoint_path</code>的参数修改成你自己的。<br>这个文件就是资源文件中的<code>vox-adv-cpk.pth.tar</code>，这是pytorch的模型文件，是训练完成的神经网络本体，有了这个文件我们就不需要重新训练一个模型。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077490227.png"></p><p>创建好以后执行下一个单元即可，这里我修改了原作者Demo。因为我发现生成的视频帧率是固定为10，这里我给imageio的save添加了fps的参数修复了这个问题。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077619407.png"></p><p>这一步耗时较长，需要耐心等待。生成完毕后左边的文件里面会出现一个<strong>generated.mp4</strong>的文件，右键下载下来即可。</p><h2 id="可选：为视频添加音乐"><a href="#可选：为视频添加音乐" class="headerlink" title="可选：为视频添加音乐"></a>可选：为视频添加音乐</h2><p>下载下来的视频是没有音乐的，这里我们用Pr为视频添加音轨。<br>随意创建一个工程，然后将素材导入到媒体库中。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598077854940.png"></p><p>首先将<strong>Unravel.mp4和Unravel.mp3</strong>拖到轨道上，把这两个对齐，因为视频是从中间开始唱的。当然你不用原版直接用视频的女声音轨也是可以的（就是生草程度不如原OP好）</p><p>对齐了以后把视频也拖上去。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598078005288.png"></p><p>渲染视频并导出：<strong>文件-导出-媒体</strong><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1598078057990.png"><br>默认即可，生成后的视频放在项目文件夹下。</p><p>Have fun!</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 深度学习 </tag>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>异星工厂(Factorio)中量化设计的数学</title>
-      <link href="/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html"/>
-      <url>/yi-xing-gong-han-factorio-zhong-liang-hua-she-ji-de-shu-xue.html</url>
-      
-        <content type="html"><![CDATA[<p>玩异星工厂一段时间了，一直对异星工厂中一个广受欢迎的Mod——Helmod中的自动量化设计很感兴趣。这是一个非常常用且强大的Mod，能帮助玩家自动完成很多量化设计的计算。今天闲得无聊，想办法自己实现一下。</p><h2 id="问题介绍"><a href="#问题介绍" class="headerlink" title="问题介绍"></a>问题介绍</h2><p>异星工厂中的典型问题通常是这样的</p><p><strong>一条流水线有多个加工机器同时工作，在单位时间内:<br>机器A使用a份材料1，产出b份中间产品1，c分中间产品2<br>机器B使用b份中间产品1，产出c份中间产品3<br>机器C使用d份中间产品3，最终产出最终产品</strong></p><p>对于这个模型，可以提出很多问题，最常用，也是最有用的问题通常是：我可以分配出N份材料输入进产线，如何搭配机器使得其能刚好用完所有中间产品防止堆积。(因为游戏中产品没有及时处理掉产生堆积会导致机器无法运行，进而导致整个产线停工。)</p><h2 id="约束输入时如何搭配机器使中间产品刚好用完"><a href="#约束输入时如何搭配机器使中间产品刚好用完" class="headerlink" title="约束输入时如何搭配机器使中间产品刚好用完"></a>约束输入时如何搭配机器使中间产品刚好用完</h2><p>我们以这个配方为例<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/Snipaste_2020-08-18_15-56-06.png"></p><p>这是一个化工序列的配方，输入原煤，输出燃气作为产品，我们忽略产品的输出，只计算中间产品，单位时间为分钟：<br>第一个工厂输入300原煤，输出90煤作为中间产品 <code>注意：煤不等于原煤，煤是原煤的产品</code><br>第二个工厂输入200煤，输出120焦炭为中间产品<br>第三个工厂输入240焦炭</p><p>现在我们的问题就是在输入的原煤固定时，使中间产品<strong>煤，焦炭</strong>全部用完</p><p>使用矩阵建模可以得到一个Ax=b形式的等式<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597740946967.png"></p><p>这里的矩阵A就是配方矩阵，其中每一列代表一个配方，每一行代表一种材料<br>此处的Input就是我们的输入值，有一点要注意这个Input必须输入一个负数。比如输入是3000原煤，这里就要输入-3000.</p><p>我比较懒，计算部分就直接用Mathematica算了。<br>随便试一个数字，7299吧<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741167547.png"><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741191832.png"><br>向上取整后和游戏Mod中结果一致，Good.</p><h2 id="更进一步：通过配方计算最优配比"><a href="#更进一步：通过配方计算最优配比" class="headerlink" title="更进一步：通过配方计算最优配比"></a>更进一步：通过配方计算最优配比</h2><p>这个Mod可以帮我们通过输入约束计算出消耗完中间产品的配比，但是不是所有配比都是最优配比。因为很多比例能用完所有产品都是通过冗余消耗做到的。说白了就是用不完，哪怕只剩一点点我也再加一台机器把他用完。这样做的缺点很明显，就是总有机器无法全功率运行。<br>Mod并没有提供通过配方计算完美比例的方法，所以我决定在刚刚研究的基础上更进一步，找到一个计算配方最优比例的通用方法。</p><p>依旧是通过矩阵进行建模，只不过这次我们不需要输入约束了。所以可以完全不考虑输入的多少，只考虑如何配比能用完所有中间产品。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597741531419.png"></p><p>这个矩阵相当于方程组<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742206265.png"></p><p>3个未知数，方程的结果还等于0.</p><p>这里需要用到线性代数中解零空间的知识。</p><p>先对这个配方矩阵进行行约化，找到其自由变量。<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742287066.png"></p><p>可以看到自由变量在第三列，设置第三个未知数z为1求特解。<br>通过重新设置未知数，得到了一个新的方程组<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742370655.png"></p><p>现在这个方程组是可解的了，求解得到结果<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742432238.png"></p><p>结果有分数，这里将他们都整数化，全部乘以9得到最终结果，完美配比是$40:18:9$</p><p>验证一下：<br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742538878.png"><br><img src="http://qf3u9flyn.hn-bkt.clouddn.com/1597742581754.png"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
   
   
 </search>
